@@ -1,0 +1,210 @@
+---
+title: "Analisis Pengaruh Hilirisasi Industri Terhadap Ekspor Nikel (HS 75) Di Indonesia dalam 10 Tahun Terakhir"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Nabila Aswa Saneva"
+date: 2023-01-15
+number-sections: true
+format:
+  html: default
+  docx: default
+---
+![](poltekapp.jpg)
+
+
+## Pendahuluan
+
+### Latar Belakang
+
+Nikel ialah logam keras yang memiliki warna putih keperakan dengan sedikit warna emas. Logam nikel bersifat kuat, padat, dan tahan terhadap karat dan panas. Selain itu, nikel adalah salah satu dari empat unsur logam yang sangat penting karena memiliki sifat feromagnetik, atau kemampuan untuk menjadi magnet dengan mudah pada suhu kamar. Nikel juga merupakan logam dengan konduktivitas listrik dan panas yang baik. Akibatnya, nikel dapat digunakan untuk membuat berbagai macam barang. Bahan baku yang digunakan untuk membuat kabel listrik adalah salah satunya (Syafira A.D dkk, 2023).
+
+Salah satu negara yang memiliki sumber daya alam yang melimpah adalah Indonesia, khususnya nikel. Dengan perkiraan 72 juta ton cadangan nikel, Indonesia adalah produsen nikel terbesar keenam di dunia. Namun, Indonesia telah mengekspor bijih nikel mentah yang bernilai rendah selama bertahun-tahun. Hal ini berdampak pada penggunaan sumber daya alam dalam negeri yang tidak memadai dan kontribusi ekonomi industri nikel yang kecil.
+
+Pemerintah Indonesia menerapkan kebijakan pada tahun 2020 untuk melarang ekspor bijih nikel mentah setelah memperhatikan keadaan ini. Tujuan dari kebijakan ini adalah untuk meningkatkan nilai tambah produksi nikel, mendorong hilirisasi sektor nikel, dan mendukung pendirian smelter di dalam negeri. Diharapkan bahwa hilirisasi akan meningkatkan investasi, menyediakan lapangan kerja baru, dan memperkuat struktur industri negara.
+
+Larangan ekspor bijih nikel ini bukannya tanpa kritik. Beberapa pihak khawatir bahwa pendekatan ini akan merugikan perusahaan-perusahaan pertambangan dan berdampak buruk pada ekspansi ekonomi yang cepat.
+
+### Ruang Lingkup
+
+Tujuan utama dari studi ini adalah untuk melihat bagaimana industri hilir nikel Indonesia telah berkembang sebagai tanggapan terhadap larangan ekspor bijih nikel. Bidang-bidang berikut ini akan dimasukkan dalam ruang lingkup studi:
+
+1. Kinerja Hilir Industri Nikel: Mengukur seberapa besar larangan ekspor bijih nikel telah membantu pengembangan smelter dan meningkatkan produksi produk hilir termasuk feronikel, nikel matte, dan baterai lithium.
+2. Nilai Tambah dan Daya Saing: Mengevaluasi bagaimana kebijakan tersebut akan mempengaruhi peningkatan nilai tambah dan daya saing sektor nikel Indonesia di tingkat dunia.
+3. Ketahanan Ekonomi: Mengevaluasi bagaimana kebijakan mempengaruhi peningkatan investasi di industri nikel, pengembangan lapangan kerja, dan pertumbuhan ekonomi regional dan nasional.
+
+Objek penelitian untuk studi ini diperoleh dari Badan Pusat Statistik Indonesia. Dua variabel dalam penelitian ini adalah nilai tambah industri nikel Indonesia dan nilai ekspor nikel dan barang daripadanya (HS 75). Untuk memudahkan penyetaraan mata uang internasional, digunakan data runtun waktu (time series) yang mencakup periode 2014-2023 dengan satuan yang telah diubah ke dalam USD. Data ini kemudian menjadi subjek penelitian.
+
+### Rumusan Masalah
+
+Berdasarkan latar belakang dan ruang lingkup penelitian, maka dapat dirumuskan beberapa masalah penelitian sebagai berikut:
+
+1.	Apakah hilirisasi industri berpengaruh terhadap ekspor nikel?
+
+2.	Apa dampak dari hilirisasi industri nikel di Indonesia? 
+
+### Tujuan dan Manfaat Penelitian
+
+Studi ini bertujuan untuk mengkaji dampak hilirisasi industri terhadap ekspor nikel Indonesia.
+
+Pemerintah dan pemangku kepentingan lainnya akan mendapatkan manfaat dari informasi dan saran dari studi ini terkait kebijakan ekspor nikel.
+
+### Package
+
+Packages yang digunakan sebagai penunjang regresi dalam penelitian ini antara lain sebagai berikut:
+
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+
+## Studi Pustaka
+
+1.	Nikel
+
+Nikel ialah logam keras yang memiliki warna putih keperakan dengan sedikit warna emas. Logam nikel bersifat kuat, padat, dan tahan terhadap karat dan panas. Selain itu, nikel adalah salah satu dari empat unsur logam yang sangat penting karena memiliki sifat feromagnetik, atau kemampuan untuk menjadi magnet dengan mudah pada suhu kamar. Nikel juga merupakan logam dengan konduktivitas listrik dan panas yang baik. Akibatnya, nikel dapat digunakan untuk membuat berbagai macam barang. Bahan baku yang digunakan untuk membuat kabel listrik adalah salah satunya (Syafira A.D dkk, 2023).
+
+2.	Ekspor
+
+Aktivitas perdagangan yang melibatkan pertukaran barang antar negara dikenal sebagai perdagangan luar negeri. Perdagangan ekspor adalah perpindahan barang dari satu negara ke negara lain, baik ada atau tidak ada pasar untuk barang tersebut di tempat lain. Perdagangan ekspor adalah pemindahan atau pengiriman produk dari dalam pabean suatu negara ke luar perbatasannya (Risa, 2018).
+
+3.	Hilirisasi industri
+
+Hilirisasi industri adalah rencana pertumbuhan ekonomi suatu negara yang menekankan pada peningkatan nilai tambah dan diversifikasi produksi di sepanjang rantai nilai sektor industri. Prosedur ini melibatkan pemrosesan lebih lanjut komoditas dasar atau bahan mentah untuk menciptakan produk yang lebih rumit. Tujuan dari hilirisasi adalah untuk meningkatkan pendapatan, mengurangi ketergantungan pada ekspor bahan mentah, dan menciptakan lapangan kerja dengan mengalihkan operasi produksi ke hulu atau ke industri yang lebih rumit. Hilirisasi juga dapat membantu kemajuan ekonomi jangka panjang suatu negara dengan membuat industri dalam negeri lebih kompetitif di kancah internasional.
+
+
+## Metode Penelitian
+
+### Data
+
+Berikut adalah data yang digunakan sebagai objek penelitian, data dibawah ini merupakan data nilai ekspor nikel dan nilai tambah industri nikel  dengan satuan USD.
+
+|  Tahun |    Ekspor (Y)   | Nilai Tambah Industri (X) |
+|--------|-----------------|---------------------------|
+|  2014  |  2.850.800.000  |       7.625.225.000       |   
+|  2015  |  3.420.800.000  |       8.326.235.000       |      
+|  2016  |  3.720.800.000  |       9.027.245.000       |    
+|  2017  |  4.020.800.000  |       9.728.255.000       |   
+|  2018  |  4.320.800.000  |      10.429.265.000       |
+|  2019  |  6.780.780.000  |      10.388.755.000       |
+|  2020  | 146.575.701.052 |      15.328.415.000       |
+|  2021  |  59.802.420.416 |      21.828.605.000       |
+|  2022  | 136.210.227.401 |      29.328.755.000       |
+|  2023  | 105.279.471.302 |      37.538.905.000       |
+
+
+Penelitian ini menggunakan data sekunder dengan bentuk data time series 2014-2023 atau 10 tahun terakhir, data yang dipakai ialah data yang telah diolah dengan sumber Badan Pusat Statistik Indonesia.
+
+```{r}
+setwd('C:/Users/Dragon/Documents/metodologi/latihan')
+library(readxl) # buat baca excel
+library(tidyverse) # buat data wrangling
+dat <- read_excel("metopel.xlsx")
+View(dat)
+
+reg1<-lm(Y~X,data=dat)
+dat$m<-resid(reg1)
+plot(dat$X,dat$m,xlab="Nilai Tambah Industri",ylab="error")
+abline(h=0)
+```
+
+[Plot pengaruh error terhadap nilai ekspor](Rekspor.png)
+
+```{r}
+dat$m<-resid(reg1)
+plot(dat$Y,dat$m,xlab="Nilai Ekspor",ylab="error")
+abline(h=0)
+```
+
+[Plot pengaruh error terhadap nilai tambah industri](Rindustri.png)
+
+
+### Metode Analisis
+
+Metode analisis yang digunakan dalam penelitian ini adalah metode kuantitatif deskriptif. Metode yang dipilih adalah regresi sederhana dengan 1 variabel dependen yaitu ekspor dan 1 variabel independen yaitu Nilai Tambah Industri. Penelitian ini bertujuan untuk mencari hubungan antara ekspor (Y) dengan Nilai Tambah Industri (X). Penelitian ini bermaksud mencari hubungan antara hwy dan cty. Spesifikasi yang dilakukan adalah:
+
+$$
+Y_{}=\beta_0 + \beta_1 x+\mu
+$$
+
+di mana $y_t$ adalah hwy dan $x_t$ adalah cty.Di mana X adalah nilai tambah industri dan Y adalah nilai ekspor nikel.
+
+
+## Pembahasan
+
+### Pembahasan Masalah
+
+|Variabel           | Coefficient | Std.Error | t-value | Prob (.) |
+|-------------------|-------------|-----------|---------|----------|
+|Intercept          |-2,27E+13    |2,54E+13   |-0,894   |0.397     |
+|X                  |4,39E+03     |1,36E+03   |3.235    |0.012 *   |     
+|R squared          |0.5667       |           |         |          |
+|Adjusted R-squared |0.5125       |           |         |          |   
+|F-Statistic        |10.46        |           |         |          |
+|p-value            |0.01197      |           |         |          |
+
+Hasil regresi yang telah didapat dimasukan ke dalam rumus persamaan yang ada sehingga menjadi:
+$$
+Y_{}=2.269  + 4.386 x
+$$
+Hilirisasi industri berperan sangat penting dalam peningkatan pertumbuhan ekonomi di Indonesia dikarenakan nilai variabel X yang positif, jika dilihat pada hasil regresinya terdapat pengaruh positif dan signifikan antara hilirisasi industri terhadap ekspor nikel di Indonesia. Jika diasumsikan setiap kenaikan nilai tambah industri (hilirisasi) 1, maka ekspor akan meningkat sebesar 4.386. Hal ini dapat diartikan bahwa semakin tinggi tingkat hilirisasi industri nikel di Indonesia, maka akan semakin tinggi pula nilai ekspor nikel.
+
+Nilai t-statistic sebesar 3,235 dengan p-value sebesar 0,012. Artinya, terdapat probabilitas sebesar 1,2% bahwa hasil regresi tersebut terjadi secara kebetulan. Nilai R-squared sebesar 0,5667 menunjukkan bahwa 56,67% keragaman nilai ekspor nikel dapat dijelaskan oleh variabel hilirisasi industri. Hal ini berarti bahwa terdapat faktor-faktor lain yang juga mempengaruhi ekspor nikel, seperti harga nikel, permintaan global, dan kebijakan pemerintah.
+
+
+### Analisis masalah
+
+Hasil regresinya adalah
+
+```{r}
+dat<-read_excel('metopel.xlsx')
+reg1<-lm(Y~X,data=dat)
+summary(reg1)
+```
+
+Jika diasumsikan setiap kenaikan nilai tambah industri (hilirisasi) 1, maka ekspor akan meningkat sebesar 4.386. Keadaan utama yang dapat disimpulkan adalah adanya pengaruh positif dan signifikan antara hilirisasi industri dan ekspor nikel. Nilai t-statistik sebesar 3,235 dengan p-value 0,012 dengan jelas menunjukkan keterkaitan statistik yang kuat. Artinya, peningkatan tingkat hilirisasi industri nikel beriringan dengan peningkatan nilai ekspor. Koefisien regresi 4.386 semakin memperkuat hal ini, menunjukkan dampak langsung bahwa setiap peningkatan satu unit tingkat hilirisasi akan berujung pada peningkatan 4.386 unit nilai ekspor nikel.
+
+Hilirisasi industri memiliki pengaruh yang positif terhadap ekspor nikel. Hal ini dapat diartikan bahwa semakin tinggi tingkat hilirisasi industri nikel di Indonesia, maka akan semakin tinggi pula nilai ekspor nikel. Pengaruh positif hilirisasi industri terhadap ekspor nikel dapat dijelaskan, antara lain:
+
+1. Penciptaan Lapangan Kerja
+
+Hilirisasi industri dapat menciptakan lapangan kerja baru di berbagai sektor, mulai dari pertambangan, pengolahan, hingga manufaktur. Menurut data Kementerian Energi dan Sumber Daya Mineral (ESDM), industri hilirisasi nikel dapat menciptakan sekitar 1 juta lapangan kerja baru di Indonesia.
+Penciptaan lapangan kerja baru ini dapat meningkatkan kesejahteraan masyarakat, terutama masyarakat di sekitar wilayah pertambangan nikel. Hal ini dapat dilakukan melalui peningkatan pendapatan, peningkatan keterampilan, dan peningkatan kesempatan pendidikan.
+Peningkatan permintaan domestik terhadap nikel juga dapat terjadi sebagai dampak dari penciptaan lapangan kerja baru. Hal ini karena meningkatnya jumlah penduduk yang bekerja di industri nikel akan meningkatkan permintaan terhadap produk-produk yang terbuat dari nikel, seperti baterai, baja tahan karat, dan lain-lain.
+
+2. Nilai Tambah
+
+Hilirisasi industri dapat meningkatkan nilai tambah produk nikel. Hal ini karena produk nikel hasil hilirisasi memiliki nilai ekonomi yang lebih tinggi daripada bijih nikel mentah. Peningkatan nilai tambah produk nikel ini dapat meningkatkan daya saing dan profitabilitas produk nikel Indonesia di pasar global. Hal ini karena produk nikel hasil hilirisasi lebih kompetitif dari segi harga dan kualitas.
+
+3. Diversifikasi Produk
+
+Hilirisasi industri dapat membuka peluang pengembangan produk nikel yang beragam, tidak hanya fokus pada bijih mentah. Hal ini dapat menarik segmen pasar yang lebih luas dan meningkatkan nilai total ekspor nikel. Peningkatan diversifikasi produk nikel ini dapat meningkatkan nilai total ekspor nikel karena dapat menarik minat pasar dari berbagai segmen. Selain itu, diversifikasi produk juga dapat meningkatkan daya saing produk nikel Indonesia di pasar global.
+
+4. Efisiensi Produksi
+
+Investasi dalam teknologi dan infrastruktur yang menyertai hilirisasi dapat meningkatkan efisiensi produksi dan menurunkan biaya. Hal ini dapat membuat produk nikel Indonesia lebih kompetitif di pasar internasional, lagi-lagi mendorong peningkatan ekspor. Peningkatan efisiensi produksi ini dapat dicapai melalui berbagai cara, seperti penggunaan teknologi yang lebih modern dan pembangunan infrastruktur yang lebih memadai. Hal ini dapat menurunkan biaya produksi dan meningkatkan produktivitas industri nikel.
+
+
+## Kesimpulan
+
+Hilirisasi industri memiliki dampak positif yang signifikan terhadap ekspor nikel di Indonesia. Peningkatan tingkat hilirisasi industri nikel berkontribusi pada penciptaan lapangan kerja, memicu pertumbuhan sekitar 1 juta lapangan kerja baru di berbagai sektor, dari pertambangan hingga manufaktur. Dampak positif ini tidak hanya meningkatkan kesejahteraan masyarakat di sekitar wilayah pertambangan nikel melalui peningkatan pendapatan dan keterampilan, tetapi juga meningkatkan permintaan domestik terhadap produk-produk nikel. Selain itu, hilirisasi industri menghasilkan nilai tambah pada produk nikel, meningkatkan daya saing dan profitabilitas di pasar global. Diversifikasi produk nikel, tidak hanya terfokus pada bijih mentah, membuka peluang pasar yang lebih luas dan meningkatkan total nilai ekspor nikel. Investasi dalam teknologi dan infrastruktur yang menyertai hilirisasi meningkatkan efisiensi produksi, menurunkan biaya, dan membuat produk nikel Indonesia lebih kompetitif secara internasional, mendorong pertumbuhan ekspor yang berkelanjutan.
+
+
+## Referensi
+
+•	Ahdiat, Adi. (2023). Ekspor Nikel Meroket pada 2022, Rekor Tertinggi Sedekade. Diakses pada 15 Januari 2023, https://databoks.katadata.co.id/datapublish/2023/07/06/ekspor-nikel-indonesia-meroket-pada-2022-rekor-tertinggi-sedekade#:~:text=Menurut%20data%20Badan%20Pusat%20Statistik,menjadi%20USD%205%2C97%20miliar
+
+•	Hilirisasi Nikel sebagai Langkah Awal Transformasi dan Akselerasi Perekonomian Indonesia. (2023). Diakses pada 15 Januari 2023, https://maritim.go.id/detail/hilirisasi-nikel-sebagai-langkah-awal-transformasi-dan-akselerasi-perekonomian-indonesia
+
+•	https://www.bps.go.id/id/exim
+
+•	Indraini, Anisa. (2023). BPS Sebut Ekspor Nikel Naik 5 Kali Lipat Berkat Hilirisasi Jokowi. Diakses pada 15 Januari 2023, https://finance.detik.com/berita-ekonomi-bisnis/d-6877509/bps-sebut-ekspor-nikel-naik-5-kali-lipat-berkat-hilirisasi-jokowi
+
+•	Mae. (2023). Gibran Sebut Ekspor Nikel Tembus US$33 Miliar, Cek Faktanya! Diakses pada 15 Januari 2023, https://www.cnbcindonesia.com/research/20231222210423-128-499798/gibran-sebut-ekspor-nikel-tembus-us-33-miliar-cek-faktanya 
+
+•	Rahmah, E. D. D. (2022). Analisis Ekspor Nikel Indonesia Dan Faktorfaktor Yang Mempengaruhinya (Doctoral dissertation, Nusa Putra)
+
+•	Risa, Mey. (2018). Ekspor dan Impor. Yogyakarta: Percetakan Deepublish
+
+•	Syafira, A. D., Putri, C. M., Widyaningsih, E., & Kusumawijaya, P. (2023). Analisis Peluang, Tantangan, dan Dampak Larangan Ekspor Nikel Terhadap Perdagangan Internasional di Tengah Gugatan Uni Eropa di WTO. Jurnal Economica, 2(1), 90-100
+
+
